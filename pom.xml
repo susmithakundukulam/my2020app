@@ -3,11 +3,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.javabycode</groupId>
+	<groupId>com.my2020app</groupId>
 	<artifactId>my2020app</artifactId>	
 	<version>1.0.0</version>
 	<name>SPRING-MVC - ${project.artifactId}</name>
-	<url>http://javabycode.com</url>
+	<url>http://my2020app.com</url>
 	<packaging>war</packaging>
 
 	<properties>

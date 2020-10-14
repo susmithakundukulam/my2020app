@@ -1,4 +1,4 @@
-package com.javabycode.config;
+package com.my2020app.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

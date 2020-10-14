@@ -1,4 +1,4 @@
-package com.javabycode.config;
+package com.my2020app.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.javabycode")
+@ComponentScan(basePackages = "com.my2020app")
 public class MyWebConfig extends WebMvcConfigurerAdapter {
 	
 	@Bean

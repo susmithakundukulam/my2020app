@@ -1,4 +1,4 @@
-package com.javabycode.model;
+package com.my2020app.model;
 
 import java.io.Serializable;
 import java.util.Date;

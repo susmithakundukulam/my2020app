@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.javabycode</groupId>
-	<artifactId>springmvc</artifactId>	
+	<artifactId>my2020app</artifactId>	
 	<version>1.0.0</version>
 	<name>SPRING-MVC - ${project.artifactId}</name>
 	<url>http://javabycode.com</url>

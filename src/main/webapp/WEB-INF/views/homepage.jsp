@@ -10,5 +10,7 @@
 
 <h1>Hiii.......</h1>
 
+<a href="user/showForm">showForm Link</a>
+<a href="user/showFormTags">showFormTags Link</a>
 </body>
 </html>

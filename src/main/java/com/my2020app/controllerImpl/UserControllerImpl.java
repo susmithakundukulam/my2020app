@@ -3,16 +3,25 @@ package com.my2020app.controllerImpl;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 
 import com.my2020app.controller.UserController;
 import com.my2020app.model.Student;
 
 @Controller
 public class UserControllerImpl implements UserController{
+	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+	}
 
 	public String getIntUsersPage(ModelMap model) {
 		try {	

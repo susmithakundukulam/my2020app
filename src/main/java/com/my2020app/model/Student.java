@@ -1,19 +1,16 @@
 package com.my2020app.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
 	private String firstName;
+	
+	@NotNull(message="is required...")
+	@Size(min = 1, message="is required...")
 	private String lastName;
 	
-	public Student() {
-		
-	}
 
-	public Student(String firstName, String lastName) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-	
 	public String getFirstName() {
 		return firstName;
 	}

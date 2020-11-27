@@ -1,10 +1,12 @@
 package com.my2020app.controllerImpl;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 
 import com.my2020app.controller.UserController;
 import com.my2020app.model.Student;
@@ -81,6 +83,41 @@ public class UserControllerImpl implements UserController{
 			String msg = "Hi " + firstName +" " +lastName;
 			model.addAttribute("message" , msg);
 			return "processFormTags";
+		}catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+	}
+
+	@Override
+	public String showFormValidations(Model model) {
+		try {
+			Student theStudent = new Student();
+			model.addAttribute("student", theStudent);
+			return "showFormValidations";
+		}catch (Exception e) {
+			e.printStackTrace();
+			
+			return "error";
+		}
+	}
+
+	@Override
+	public String getProcessFormValidations(@Valid Student theStudent, 
+			 BindingResult bindingResult, Model model) {
+		System.out.println("getProcessFormValidations");
+		try { 
+			if(bindingResult.hasErrors()) {
+				
+				return "showFormValidations";
+			}else {
+				
+				String firstName = theStudent.getFirstName().toUpperCase();
+				String lastName = theStudent.getLastName().toUpperCase();
+				String msg = "Hi " + firstName +" " +lastName;
+				model.addAttribute("message" , msg);
+				return "processFormValidations";
+			}
 		}catch (Exception e) {
 			e.printStackTrace();
 			return "error";

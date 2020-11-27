@@ -48,6 +48,14 @@
 		    <artifactId>jstl</artifactId>
 		    <version>1.2</version>
 		</dependency>
+		
+		<!-- hibernate-validator dependencies-->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>6.1.6.Final</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

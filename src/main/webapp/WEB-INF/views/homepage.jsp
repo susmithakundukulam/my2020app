@@ -15,6 +15,8 @@
 <a href="user/showFormTags">showFormTags Link</a>
 <br>
 <a href="user/showFormValidations">showFormValidations Link</a>
+<br>
+<a href="user/showFormCustomValidations">showFormCustomAnnotation Validations Link</a>
 
 </body>
 </html>

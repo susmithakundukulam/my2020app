@@ -125,6 +125,7 @@ public class UserControllerImpl implements UserController{
 				String lastName = theStudent.getLastName().toUpperCase();
 				String msg = "Hi " + firstName +" " +lastName;
 				model.addAttribute("message" , msg);
+				model.addAttribute("student", theStudent);
 				return "processFormValidations";
 			}
 		}catch (Exception e) {
@@ -133,6 +134,41 @@ public class UserControllerImpl implements UserController{
 		}
 	}
 
+	@Override
+	public String showFormCustomValidations(Model model) {
+		try {
+			Student theStudent = new Student();
+			model.addAttribute("student", theStudent);
+			return "showFormValidations";
+		}catch (Exception e) {
+			e.printStackTrace();
+			
+			return "error";
+		}
+	}
+
+	@Override
+	public String processFormCustomValidations(@Valid Student theStudent, 
+			 BindingResult bindingResult, Model model) {
+		System.out.println("getProcessFormValidations");
+		try { 
+			if(bindingResult.hasErrors()) {
+				
+				return "showFormCustomValidations";
+			}else {
+				
+				String firstName = theStudent.getFirstName().toUpperCase();
+				String lastName = theStudent.getLastName().toUpperCase();
+				String msg = "Hi " + firstName +" " +lastName;
+				model.addAttribute("message" , msg);
+				model.addAttribute("student", theStudent);
+				return "processFormCustomValidations";
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+	}
 
 	
 }

@@ -46,4 +46,11 @@ public interface UserController {
 	@RequestMapping("/processFormValidations")
 	public String getProcessFormValidations(@Valid @ModelAttribute("student") Student theStudent
 			, BindingResult bindingResult, Model model);
+	
+	@RequestMapping("/showFormCustomValidations")
+	public String showFormCustomValidations(Model model );
+	
+	@RequestMapping("/processFormCustomValidations")
+	public String processFormCustomValidations(@Valid @ModelAttribute("student") Student theStudent
+			, BindingResult bindingResult, Model model);
 }

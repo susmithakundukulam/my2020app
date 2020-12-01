@@ -27,12 +27,11 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 	}
 	
 	
-//	@Bean
-//	public MessageSource messageSource() {
-//	    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-//	    messageSource.setBasename("messages");
-//	    return messageSource;
-//	}
+	/*
+	 * @Bean public MessageSource messageSource() { ResourceBundleMessageSource
+	 * messageSource = new ResourceBundleMessageSource();
+	 * messageSource.setBasename("messages"); return messageSource; }
+	 */
 //
 //	@Override
 //	public void addResourceHandlers(ResourceHandlerRegistry registry) {

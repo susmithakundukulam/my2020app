@@ -12,6 +12,7 @@
 
 	<properties>
 		<springframework.version>4.3.0.RELEASE</springframework.version>
+		<c3po.version>0.9.5.2</c3po.version>
 	</properties>
 
 	<dependencies>
@@ -80,7 +81,14 @@
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-orm</artifactId>
-		    <version>5.2.7.RELEASE</version>
+		    <version>${springframework.version}</version>
+		</dependency>
+		
+				<!-- C3PO -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3po.version}</version>
 		</dependency>
 	</dependencies>
 

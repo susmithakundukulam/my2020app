@@ -4,6 +4,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@RequestMapping("/apiDb")
 public interface DummyApiController {
 	
 	@RequestMapping("/saveDummyStudent")

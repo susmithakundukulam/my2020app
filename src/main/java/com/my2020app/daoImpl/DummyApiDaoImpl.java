@@ -19,10 +19,11 @@ public class DummyApiDaoImpl implements DummyApiDAO {
 	@Override
 	public String saveStudent(StudentHib student) {
 		try {
-			// sessionFactory.getCurrentSession().save(student);
+			sessionFactory.getCurrentSession().save(student);
+			System.out.println(student.getId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return "ttttt";
 	}
 }

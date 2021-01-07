@@ -34,6 +34,8 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @PropertySource({ "classpath:persistence-mysql.properties" })
 public class MyWebConfig extends WebMvcConfigurerAdapter {
 	
+	//INORDER TO GET SPRINGMVC JSP FILES
+	// define a bean for ViewResolver
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -61,8 +63,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 	
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
-	// define a bean for ViewResolver
-
+	//STEP 1:  DEFINE DATABASE DATASOURCE/CONNECTION POOL
 	@Bean
 	public DataSource myDataSource() {
 		
@@ -120,6 +121,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 		return intPropVal;
 	}	
 	
+	//STEP 2: SETUP HIBERNATE SESSION FACTORY
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
 		
@@ -134,6 +136,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 		return sessionFactory;
 	}
 	
+	//STEP 3: SETUP HIBERNATE TRANSACTION MANAGER
 	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {

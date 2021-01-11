@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.my2020app.controller.EmployeeRestController;
 import com.my2020app.domain.ResponseMessage;
@@ -35,5 +39,14 @@ public class EmployeeRestControllerImpl implements EmployeeRestController{
 		response.addPayload("employeeList", employees);
 		return response;
 	}
+
+	@Override
+	public ResponseMessage getEmployeeListById(@PathVariable Integer empId) {
+		System.out.println("..............................." +empId);
+		ResponseMessage response=new ResponseMessage();
+		response.addPayload("result", employees.get(empId));
+		return response;
+	}
+
 
 }

@@ -26,13 +26,22 @@ public class EmployeeRestControllerImpl implements EmployeeRestController{
 	
 	public List<Employee> employees = new ArrayList<Employee>();
 
+//	@ExceptionHandler
+//	public ResponseEntity<EmployeeErrorResponse> handleException(EmployeeNotFoundException exc){
+//		EmployeeErrorResponse error = new EmployeeErrorResponse();
+//		error.setStatus(HttpStatus.NOT_FOUND.value());
+//		error.setMessage(exc.getMessage());
+//		error.setTimestamp(System.currentTimeMillis());
+//		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+//	}
+	
 	@ExceptionHandler
-	public ResponseEntity<EmployeeErrorResponse> handleException(EmployeeNotFoundException exc){
+	public ResponseEntity<EmployeeErrorResponse> handleException(Exception exc){
 		EmployeeErrorResponse error = new EmployeeErrorResponse();
-		error.setStatus(HttpStatus.NOT_FOUND.value());
+		error.setStatus(HttpStatus.BAD_REQUEST.value());
 		error.setMessage(exc.getMessage());
 		error.setTimestamp(System.currentTimeMillis());
-		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 	
 	@PostConstruct

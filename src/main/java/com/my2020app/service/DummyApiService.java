@@ -27,12 +27,18 @@ public class DummyApiService {
 	 Properties prop = utils.getPropertyFile("message");
 	 
  
-	public String saveStudent(String firstName, String lastName, String email) { 
+	public ResponseMessage saveStudent(String firstName, String lastName, String email) { 
+		System.out.println("saveStudent-2");
+		ResponseMessage response = new ResponseMessage();
 	    StudentHib theStudent = new StudentHib(); 
 	    theStudent.setFirstName(firstName); 
 	    theStudent.setLastName(lastName); 
-	    theStudent.setEmail(email); 
-		return dummyApiDao.saveStudent(theStudent); 
+	    theStudent.setEmail(email);
+	    
+	    String result = dummyApiDao.saveStudent(theStudent);
+	    response.setMessage(result);
+		return response; 
+		
 	}
 
 	public ResponseMessage studentList(HttpServletRequest request, int offset, int recordsPerPage) {

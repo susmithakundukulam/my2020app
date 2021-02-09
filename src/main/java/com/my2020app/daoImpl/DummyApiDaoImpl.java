@@ -23,6 +23,7 @@ public class DummyApiDaoImpl implements DummyApiDAO {
 	@Override
 	public String saveStudent(StudentHib student) {
 		try {
+			System.out.println("saveStudent - 3");
 			sessionFactory.getCurrentSession().save(student);
 			System.out.println(student.getId());
 		} catch (Exception e) {

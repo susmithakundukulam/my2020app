@@ -16,10 +16,11 @@ public class DummyApiControllerImpl implements DummyApiController{
 	DummyApiService dummyApiService;
 
 	@Override
-	public String saveStudent(String firstName, String lastName, String email) {
-		firstName = "Susmitha";
-		lastName = "Tom";
-		email = "susmithatom@gmail.com";
+	public ResponseMessage saveStudent(String firstName, String lastName, String email) {
+		System.out.println("saveStudent - 1");
+//		firstName = "Susmitha";
+//		lastName = "Tom";
+//		email = "susmithatom@gmail.com";
 		return dummyApiService.saveStudent(firstName, lastName, email);
 	}
 

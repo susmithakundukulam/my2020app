@@ -25,7 +25,7 @@ public class UserControllerImpl implements UserController{
 
 	public String getIntUsersPage(ModelMap model) {
 		try {	
-	System.out.println("hhhh..........");
+			System.out.println("homepage..........");
 			return "homepage";
 		} catch (Exception e) {
 			e.printStackTrace();

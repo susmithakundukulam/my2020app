@@ -10,7 +10,7 @@
 <h1>Hiii.......</h1>
 
 <p>
-<a href=""${pageContext.request.contextPath}/user">Home page</a>
+<a href="${pageContext.request.contextPath}/user">Home page</a>
 </p>
 
 <form:form action="${pageContext.request.contextPath}/logout" method="POST">

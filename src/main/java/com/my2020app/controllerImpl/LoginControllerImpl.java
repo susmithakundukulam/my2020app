@@ -13,4 +13,10 @@ public class LoginControllerImpl implements LoginController{
 		return "login_page";
 	}
 
+	@Override
+	public String accessDeniedPage() {
+ 
+		return "accessDeniedPage";
+	}
+
 }

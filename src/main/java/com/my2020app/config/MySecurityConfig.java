@@ -30,7 +30,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		.permitAll()
 		.and()
 		.logout()
-		.permitAll();
+		.permitAll()
+		.and()
+		.exceptionHandling().accessDeniedPage("/accessDenied");
 
 	}
 
@@ -43,7 +45,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		  UserBuilder users = User.withDefaultPasswordEncoder();
 		  auth.inMemoryAuthentication()
 		  .withUser(users.username("susmitha").password("test123").roles("EMPLOYEE"))
-		  .withUser(users.username("tom").password("test123").roles("MANAGER"))
+		  .withUser(users.username("tom").password("test123").roles("EMPLOYEE", "MANAGER"))
 		  .withUser(users.username("christo").password("test123").roles("ADMIN"));
 		  
 	}

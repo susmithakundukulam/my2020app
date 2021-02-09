@@ -6,5 +6,8 @@ public interface LoginController {
 	
 	@GetMapping("/showMyLoginPage")
 	public String showMyLoginPage() ;
+	
+	@GetMapping("/accessDenied")
+	public String accessDeniedPage() ;
  
 }

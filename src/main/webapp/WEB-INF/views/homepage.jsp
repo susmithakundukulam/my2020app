@@ -28,9 +28,11 @@ Role : <sec:authentication property="principal.authorities"/>
 <a href="user/showFormCustomValidations">showFormCustomAnnotation Validations Link</a>
 <p></p>
 
-<p>
-<a href="${pageContext.request.contextPath}/manager">Manager meeting</a>
-</p>
+<sec:authorize access="hasRole('MANAGER')">
+	<p>
+	<a href="${pageContext.request.contextPath}/manager">Manager meeting</a>
+	</p>
+</sec:authorize>
 
 <form:form action="${pageContext.request.contextPath}/logout" method="POST">
 	<input type="submit" value="logout">

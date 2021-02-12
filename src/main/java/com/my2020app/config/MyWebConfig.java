@@ -76,8 +76,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 		}
 		catch (PropertyVetoException exc) {
 			throw new RuntimeException(exc);
-		}
-		
+		}		
 		// for sanity's sake, let's log url and user ... just to make sure we are reading the data
 		logger.info("jdbc.url=" + env.getProperty("jdbc.url"));
 		logger.info("jdbc.user=" + env.getProperty("jdbc.user"));
@@ -88,10 +87,10 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
 		myDataSource.setPassword(env.getProperty("jdbc.password"));
 		
 		// set connection pool props
-		myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
-		myDataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
-		myDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));		
-		myDataSource.setMaxIdleTime(getIntProperty("connection.pool.maxIdleTime"));
+		myDataSource.setInitialPoolSize(Integer.parseInt(env.getProperty("connection.pool.initialPoolSize")));
+		myDataSource.setMinPoolSize(Integer.parseInt(env.getProperty("connection.pool.minPoolSize")));
+		myDataSource.setMaxPoolSize(Integer.parseInt(env.getProperty("connection.pool.maxPoolSize")));		
+		myDataSource.setMaxIdleTime(Integer.parseInt(env.getProperty("connection.pool.maxIdleTime")));
 
 		return myDataSource;
 	}
